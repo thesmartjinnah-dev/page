@@ -122,31 +122,63 @@
                 <span class="section-subtitle">About Our</span>
                 <h2 class="section-title">Journey of Excellence</h2>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead">Lt Safiullah Shaheed Academy was established in September 2010 by Lieutenant General Khalid Shameem Wayne as a welfare project for the wards of Shuhadas, Officers, JCOs, Soldiers, Defence Paid Employees & Civilians.</p>
-                    <p>Our journey began with a mission to provide quality education at the most reasonable fee structure, operating on a "NO PROFIT NO LOSS BASIS". We are proud to have successfully conducted numerous sessions since our inception, nurturing academic excellence in the hearts of Quetta Garrison.</p>
-                    <div class="features-list">
-                        <div class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>100% Syllabus Coverage</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Board Pattern Papers</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Qualified Permanent Faculty</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Best Educational Environment</span>
+            <div class="about-summary">
+                <p class="about-intro">Lt Safiullah Shaheed Academy was established in September 2010 as a welfare project to provide quality education at affordable rates on a "NO PROFIT NO LOSS BASIS".</p>
+                
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🎓</span>
+                        <h4>Established 2010</h4>
+                        <p>15+ years of excellence</p>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">👨‍🏫</span>
+                        <h4>Expert Faculty</h4>
+                        <p>20+ years experience</p>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📚</span>
+                        <h4>100% Coverage</h4>
+                        <p>Complete syllabus</p>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🏆</span>
+                        <h4>Top Results</h4>
+                        <p>Excellent board scores</p>
+                    </div>
+                </div>
+                
+                <div class="about-full" id="aboutFull" style="display: none;">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p class="lead">Our journey began with a mission to transform society by educating and empowering students from families of Shuhadas, Officers, JCOs, Soldiers, Defence Paid Employees & Civilians.</p>
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <span class="check-icon">✓</span>
+                                    <span>100% Syllabus Coverage</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="check-icon">✓</span>
+                                    <span>Board Pattern Papers</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="check-icon">✓</span>
+                                    <span>Qualified Permanent Faculty</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="check-icon">✓</span>
+                                    <span>Best Educational Environment</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="images/hero-image.jpg" alt="LSSA Campus">
+                
+                <div class="see-more-btn-container">
+                    <button class="see-more-btn" onclick="toggleSection('aboutFull', this)">
+                        <span class="btn-text">See More About LSSA</span>
+                        <span class="btn-icon">▼</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -160,10 +192,60 @@
                     <span class="section-subtitle">In Honor Of</span>
                     <h2>Lt Safiullah Shaheed</h2>
                     <div class="star-badge">⭐ Sitara-e-Basalat</div>
-                    <p>Born on 19th January 1987 at Killi Meer Sharif of Nushki. Joined 117 L/C in Apr 2006. Commissioned in 16 Baloch Regiment in April 2008.</p>
-                    <p>On 17th May 2009, while undertaking operations against Terrorists in Op Rah-e-Haq, Swat, the brave son of soil embraced Shahadat.</p>
-                    <p class="tribute-note">Lt Safiullah (Shaheed) Education Academy was established to acknowledge his services to the country.</p>
+                    <p>A brave son of soil who embraced Shahadat on 17th May 2009 while undertaking operations against Terrorists in Op Rah-e-Haq, Swat.</p>
+                    
+                    <div class="tribute-full" id="tributeFull" style="display: none;">
+                        <p>Born on 19th January 1987 at Killi Meer Sharif of Nushki. Joined 117 L/C in Apr 2006. Commissioned in 16 Baloch Regiment in April 2008.</p>
+                        <p class="tribute-note">Lt Safiullah (Shaheed) Education Academy was established to acknowledge his services to the country.</p>
+                    </div>
+                    
+                    <button class="see-more-btn-inline" onclick="toggleSection('tributeFull', this)">
+                        <span class="btn-text">Read Full Story</span>
+                        <span class="btn-icon">▼</span>
+                    </button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery with Slider -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Campus Life</span>
+                <h2 class="section-title">Life At LSSA</h2>
+            </div>
+            <div class="gallery-slider">
+                <div class="gallery-track">
+                    <div class="gallery-slide">
+                        <img src="images/gallery/gallery1.jpg" alt="LSSA Campus">
+                        <div class="gallery-caption">LSSA Campus View</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="images/gallery/gallery2.jpg" alt="Computer Lab">
+                        <div class="gallery-caption">Computer Laboratory</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="images/gallery/gallery3.jpg" alt="Classroom">
+                        <div class="gallery-caption">Modern Classrooms</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="images/gallery/gallery4.jpg" alt="Award Ceremony">
+                        <div class="gallery-caption">Award Ceremony</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="images/gallery/gallery5.jpg" alt="Examination">
+                        <div class="gallery-caption">Examination Hall</div>
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="images/gallery/gallery6.jpg" alt="Teachers">
+                        <div class="gallery-caption">Teacher-Student Interaction</div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-prev">‹</button>
+                <button class="gallery-next">›</button>
             </div>
         </div>
     </section>

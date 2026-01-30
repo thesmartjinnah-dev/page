@@ -280,3 +280,29 @@ window.addEventListener('load', () => {
 
 console.log('%cLSSA - Lt Safiullah Shaheed Academy', 'color: #1e3c72; font-size: 20px; font-weight: bold;');
 console.log('%cLearning Today, Leading Tomorrow', 'color: #f39c12; font-size: 14px;');
+
+// Toggle Section Visibility (See More/Less)
+function toggleSection(sectionId, button) {
+    const section = document.getElementById(sectionId);
+    const btnText = button.querySelector('.btn-text');
+    const btnIcon = button.querySelector('.btn-icon');
+    
+    if (section.style.display === 'none' || section.style.display === '') {
+        section.style.display = 'block';
+        button.classList.add('expanded');
+        if (btnText.textContent.includes('See More') || btnText.textContent.includes('Read Full')) {
+            btnText.textContent = btnText.textContent.replace('See More', 'See Less').replace('Read Full Story', 'Show Less');
+        }
+    } else {
+        section.style.display = 'none';
+        button.classList.remove('expanded');
+        if (btnText.textContent.includes('See Less') || btnText.textContent.includes('Show Less')) {
+            btnText.textContent = btnText.textContent.replace('See Less', 'See More').replace('Show Less', 'Read Full Story');
+        }
+    }
+    
+    // Smooth scroll to button after expansion
+    setTimeout(() => {
+        button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+}
