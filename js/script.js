@@ -95,7 +95,8 @@ function updateGalleryPosition() {
 }
 
 function moveGallery(direction) {
-    const maxIndex = gallerySlides.length - getVisibleSlides();
+    const visibleSlides = getVisibleSlides();
+    const maxIndex = gallerySlides.length - visibleSlides;
     
     if (direction === 'next') {
         galleryIndex = galleryIndex >= maxIndex ? 0 : galleryIndex + 1;
@@ -107,12 +108,13 @@ function moveGallery(direction) {
 }
 
 function getVisibleSlides() {
-    if (window.innerWidth <= 768) return 1;
-    if (window.innerWidth <= 1024) return 2;
+    const width = window.innerWidth;
+    if (width <= 768) return 1;
+    if (width <= 1024) return 2;
     return 3;
 }
 
-if (galleryPrev && galleryNext) {
+if (galleryPrev && galleryNext && galleryTrack) {
     galleryPrev.addEventListener('click', () => {
         clearInterval(galleryAutoPlay);
         moveGallery('prev');
@@ -124,9 +126,15 @@ if (galleryPrev && galleryNext) {
         moveGallery('next');
         startGalleryAutoPlay();
     });
+    
+    // Initialize on page load
+    window.addEventListener('load', () => {
+        updateGalleryPosition();
+    });
 }
 
 function startGalleryAutoPlay() {
+    if (!galleryTrack) return;
     galleryAutoPlay = setInterval(() => {
         moveGallery('next');
     }, 4000);
@@ -156,9 +164,10 @@ window.addEventListener('resize', () => {
 const facultyTrack = document.querySelector('.faculty-track');
 const facultyPrev = document.querySelector('.faculty-prev');
 const facultyNext = document.querySelector('.faculty-next');
+let facultyScrollPosition = 0;
 
 if (facultyTrack) {
-    // Duplicate faculty cards for infinite scroll
+    // Duplicate faculty cards for infinite scroll effect
     const facultyCards = document.querySelectorAll('.faculty-card');
     facultyCards.forEach(card => {
         const clone = card.cloneNode(true);
@@ -166,21 +175,27 @@ if (facultyTrack) {
     });
 }
 
-if (facultyPrev) {
+if (facultyPrev && facultyTrack) {
     facultyPrev.addEventListener('click', () => {
-        facultyTrack.style.animationPlayState = 'paused';
-        setTimeout(() => {
-            facultyTrack.style.animationPlayState = 'running';
-        }, 2000);
+        const cardWidth = facultyTrack.querySelector('.faculty-card').offsetWidth + 30; // card width + gap
+        facultyScrollPosition = Math.max(0, facultyScrollPosition - cardWidth);
+        facultyTrack.style.transform = `translateX(-${facultyScrollPosition}px)`;
+        facultyTrack.style.transition = 'transform 0.5s ease';
     });
 }
 
-if (facultyNext) {
+if (facultyNext && facultyTrack) {
     facultyNext.addEventListener('click', () => {
-        facultyTrack.style.animationPlayState = 'paused';
-        setTimeout(() => {
-            facultyTrack.style.animationPlayState = 'running';
-        }, 2000);
+        const cardWidth = facultyTrack.querySelector('.faculty-card').offsetWidth + 30;
+        const maxScroll = facultyTrack.scrollWidth / 2; // Half because we duplicated
+        facultyScrollPosition += cardWidth;
+        
+        if (facultyScrollPosition >= maxScroll) {
+            facultyScrollPosition = 0; // Reset to beginning
+        }
+        
+        facultyTrack.style.transform = `translateX(-${facultyScrollPosition}px)`;
+        facultyTrack.style.transition = 'transform 0.5s ease';
     });
 }
 
@@ -305,4 +320,22 @@ function toggleSection(sectionId, button) {
     setTimeout(() => {
         button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 100);
+}
+
+// Toggle Additional Menu
+function toggleMenu(menuId) {
+    const menu = document.getElementById(menuId);
+    if (menu) {
+        menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    }
+}
+
+// Show Hidden Section (from old index)
+function showSection(sectionName) {
+    // This would load content from a modal or separate page
+    // For now, alert user that section is available
+    alert(`${sectionName.charAt(0).toUpperCase() + sectionName.slice(1)} section will be loaded. This feature needs backend implementation or modal popup.`);
+    
+    // Alternative: Scroll to contact for more info
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }

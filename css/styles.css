@@ -2220,3 +2220,251 @@ section {
 /* ========================================
    END ALIGNMENT FIXES
    ======================================== */
+
+/* ========================================
+   SIMPLIFIED HOMEPAGE FIXES
+   ======================================== */
+
+/* Additional Menu Dropdown */
+.additional-menu {
+    position: fixed;
+    top: 68px;
+    right: 20px;
+    background: var(--white);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    list-style: none;
+    padding: 10px 0;
+    z-index: 999;
+    min-width: 220px;
+    animation: slideDown 0.3s ease;
+}
+
+.additional-menu li {
+    padding: 0;
+}
+
+.additional-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--dark);
+    text-decoration: none;
+    transition: background 0.3s;
+    font-size: 0.95rem;
+}
+
+.additional-menu li a:hover {
+    background: var(--light);
+    color: var(--secondary);
+}
+
+/* Program Cards Simplified */
+.programs-grid-spa {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.program-card-spa {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.program-card-spa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.program-card-spa.highlight {
+    background: var(--gradient);
+    color: var(--white);
+}
+
+.program-icon-spa {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.program-card-spa h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.program-card-spa p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Faculty Slider Fix */
+.faculty-slider {
+    overflow: hidden;
+    position: relative;
+    padding: 0 50px;
+}
+
+.faculty-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+}
+
+.slider-controls-faculty {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.faculty-prev,
+.faculty-next {
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.faculty-prev:hover,
+.faculty-next:hover {
+    background: var(--accent);
+    transform: scale(1.1);
+}
+
+/* Gallery Slider Fix */
+.gallery-slider {
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-slide {
+    min-width: calc(33.333% - 14px);
+    flex-shrink: 0;
+}
+
+.gallery-controls {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.gallery-prev,
+.gallery-next {
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+    background: var(--accent);
+    transform: scale(1.1);
+}
+
+/* Section Spacing for Simplified Page */
+.programs-section-spa,
+.faculty-section,
+.gallery-section {
+    padding: 60px 0;
+}
+
+.programs-section-spa .section-header p {
+    font-size: 1.05rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Mobile Responsive for Simplified Layout */
+@media (max-width: 1024px) {
+    .programs-grid-spa {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .additional-menu {
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+    }
+    
+    .faculty-slider {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .programs-grid-spa {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .program-card-spa {
+        padding: 25px 20px;
+    }
+    
+    .program-icon-spa {
+        font-size: 2.5rem;
+    }
+    
+    .additional-menu {
+        top: 58px;
+    }
+    
+    .faculty-slider {
+        padding: 0 20px;
+    }
+    
+    .faculty-track {
+        gap: 20px;
+    }
+    
+    .gallery-slide {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .program-card-spa h3 {
+        font-size: 1.2rem;
+    }
+    
+    .program-icon-spa {
+        font-size: 2.2rem;
+    }
+    
+    .faculty-prev,
+    .faculty-next,
+    .gallery-prev,
+    .gallery-next {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+    }
+}
+
+/* ========================================
+   END SIMPLIFIED HOMEPAGE FIXES
+   ======================================== */
