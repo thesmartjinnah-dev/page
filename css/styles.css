@@ -249,10 +249,10 @@ a, button, .nav-link, .btn, .hamburger {
     position: relative;
     z-index: 2;
     color: var(--white);
-    text-align: left;
-    padding-top: 15vh;
-    padding-left: 50px;
-    max-width: 800px;
+    text-align: center;
+    padding-top: 20vh;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .slide-content h1 {
@@ -377,13 +377,13 @@ a, button, .nav-link, .btn, .hamburger {
 .marquee-container {
     display: flex;
     align-items: center;
-    padding: 12px 0;
+    padding: 16px 0;
     position: relative;
-    min-height: 50px;
+    min-height: 60px;
 }
 
 .marquee-icon {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 0 20px;
     animation: pulse 2s ease-in-out infinite;
     flex-shrink: 0;
@@ -413,12 +413,12 @@ a, button, .nav-link, .btn, .hamburger {
 .marquee-text {
     display: inline-block;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 600;
     padding: 0 100%;
     white-space: nowrap;
     animation: marquee-scroll 20s linear infinite;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 @keyframes marquee-scroll {
@@ -2262,13 +2262,15 @@ section {
 /* Program Cards Simplified */
 .programs-grid-spa {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .program-card-spa {
     background: var(--white);
-    padding: 30px 20px;
+    padding: 35px 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     text-align: center;
@@ -2286,17 +2288,17 @@ section {
 }
 
 .program-icon-spa {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 15px;
 }
 
 .program-card-spa h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 10px;
 }
 
 .program-card-spa p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     opacity: 0.9;
 }
 
@@ -2494,3 +2496,162 @@ section {
     object-fit: cover;
     border-radius: 12px;
 }
+
+/* Center Footer Quick Links */
+.footer-col {
+    text-align: center;
+}
+
+.footer-col ul {
+    text-align: center;
+}
+
+.footer-col ul li {
+    text-align: center;
+}
+
+/* ========================================
+   COMPREHENSIVE MOBILE FIXES
+   ======================================== */
+
+/* Mobile Hero Adjustments */
+@media (max-width: 768px) {
+    .slide-content {
+        padding-top: 15vh;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .slide-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .slide-content p {
+        font-size: 1rem;
+    }
+    
+    .btn-primary {
+        padding: 12px 28px;
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Programs Grid */
+@media (max-width: 768px) {
+    .programs-grid-spa {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .program-card-spa {
+        padding: 30px 20px;
+    }
+    
+    .program-icon-spa {
+        font-size: 3rem;
+    }
+}
+
+/* Mobile Marquee */
+@media (max-width: 768px) {
+    .marquee-container {
+        padding: 14px 0;
+        min-height: 55px;
+    }
+    
+    .marquee-icon {
+        font-size: 1.6rem;
+        margin: 0 12px;
+    }
+    
+    .marquee-text {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Gallery Fix */
+@media (max-width: 768px) {
+    .gallery-slide {
+        min-width: 100%;
+    }
+    
+    .gallery-slide img {
+        height: 300px;
+    }
+    
+    .gallery-caption {
+        font-size: 0.9rem;
+        padding: 15px 10px 10px;
+    }
+}
+
+/* Mobile Faculty Slider */
+@media (max-width: 768px) {
+    .faculty-slider {
+        padding: 0 15px;
+    }
+    
+    .faculty-track {
+        gap: 20px;
+    }
+    
+    .faculty-card {
+        min-width: 280px;
+    }
+}
+
+/* Mobile About Highlights */
+@media (max-width: 768px) {
+    .about-highlights {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .highlight-item {
+        padding: 20px 15px;
+    }
+    
+    .highlight-icon {
+        font-size: 2.2rem;
+    }
+}
+
+/* Mobile Footer */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+}
+
+/* Small Mobile (480px) */
+@media (max-width: 480px) {
+    .slide-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.1rem;
+    }
+    
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+    
+    .marquee-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   END MOBILE FIXES
+   ======================================== */
