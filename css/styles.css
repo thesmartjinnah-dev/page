@@ -158,14 +158,14 @@ a, button, .nav-link, .btn, .hamburger {
 .btn-apply {
     background: var(--accent);
     color: var(--white);
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
     box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
     white-space: nowrap;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .btn-apply:hover {
@@ -249,34 +249,35 @@ a, button, .nav-link, .btn, .hamburger {
     position: relative;
     z-index: 2;
     color: var(--white);
-    text-align: center;
-    padding-top: 25vh;
-    max-width: 900px;
-    margin: 0 auto;
+    text-align: left;
+    padding-top: 15vh;
+    padding-left: 50px;
+    max-width: 800px;
 }
 
 .slide-content h1 {
-    font-size: 2.8rem;
+    font-size: 3.5rem;
     margin-bottom: 15px;
     animation: fadeInUp 1s ease;
-    font-weight: 700;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    font-weight: 800;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+    line-height: 1.2;
 }
 
 .slide-content h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: var(--accent);
     margin-bottom: 15px;
     animation: fadeInUp 1.2s ease;
     font-weight: 600;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
 .slide-content p {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     margin-bottom: 25px;
     animation: fadeInUp 1.4s ease;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
 }
 
 @keyframes fadeInUp {
@@ -376,8 +377,9 @@ a, button, .nav-link, .btn, .hamburger {
 .marquee-container {
     display: flex;
     align-items: center;
-    padding: 18px 0;
+    padding: 12px 0;
     position: relative;
+    min-height: 50px;
 }
 
 .marquee-icon {
@@ -385,6 +387,7 @@ a, button, .nav-link, .btn, .hamburger {
     margin: 0 20px;
     animation: pulse 2s ease-in-out infinite;
     flex-shrink: 0;
+    line-height: 1;
 }
 
 @keyframes pulse {
@@ -415,6 +418,7 @@ a, button, .nav-link, .btn, .hamburger {
     padding: 0 100%;
     white-space: nowrap;
     animation: marquee-scroll 20s linear infinite;
+    line-height: 1.4;
 }
 
 @keyframes marquee-scroll {
@@ -440,12 +444,9 @@ a, button, .nav-link, .btn, .hamburger {
         font-size: 0.95rem;
     }
     
-    .announcement-marquee {
-        padding: 0;
-    }
-    
     .marquee-container {
-        padding: 14px 0;
+        padding: 10px 0;
+        min-height: 45px;
     }
 }
 
@@ -2468,3 +2469,28 @@ section {
 /* ========================================
    END SIMPLIFIED HOMEPAGE FIXES
    ======================================== */
+
+/* Gallery Caption Fix */
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 20px 15px 15px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.gallery-slide {
+    position: relative;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
