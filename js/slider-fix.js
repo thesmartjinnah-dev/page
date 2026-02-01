@@ -247,3 +247,88 @@ if (document.readyState === 'loading') {
 }
 
 console.log('Slider script loaded');
+
+// ====================================
+// HERO SLIDER AUTO-SLIDE
+// ====================================
+
+let heroSlideIndex = 1;
+let heroInterval;
+
+function initHeroSlider() {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
+    
+    if (!slides.length) return;
+    
+    function showHeroSlide(n) {
+        if (n > slides.length) { heroSlideIndex = 1; }
+        if (n < 1) { heroSlideIndex = slides.length; }
+        
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        slides[heroSlideIndex - 1].classList.add('active');
+        if (dots[heroSlideIndex - 1]) {
+            dots[heroSlideIndex - 1].classList.add('active');
+        }
+    }
+    
+    function nextHeroSlide() {
+        heroSlideIndex++;
+        showHeroSlide(heroSlideIndex);
+    }
+    
+    function prevHeroSlide() {
+        heroSlideIndex--;
+        showHeroSlide(heroSlideIndex);
+    }
+    
+    function startHeroAuto() {
+        stopHeroAuto();
+        heroInterval = setInterval(nextHeroSlide, 5000);
+    }
+    
+    function stopHeroAuto() {
+        if (heroInterval) {
+            clearInterval(heroInterval);
+        }
+    }
+    
+    // Attach button events
+    if (prevBtn) {
+        prevBtn.onclick = () => {
+            stopHeroAuto();
+            prevHeroSlide();
+            startHeroAuto();
+        };
+    }
+    
+    if (nextBtn) {
+        nextBtn.onclick = () => {
+            stopHeroAuto();
+            nextHeroSlide();
+            startHeroAuto();
+        };
+    }
+    
+    // Dot clicks
+    dots.forEach((dot, index) => {
+        dot.onclick = () => {
+            stopHeroAuto();
+            heroSlideIndex = index + 1;
+            showHeroSlide(heroSlideIndex);
+            startHeroAuto();
+        };
+    });
+    
+    // Start
+    showHeroSlide(heroSlideIndex);
+    startHeroAuto();
+    console.log('Hero auto-slide started (5 seconds)');
+}
+
+// Initialize hero slider
+initHeroSlider();

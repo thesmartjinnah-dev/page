@@ -2655,3 +2655,327 @@ section {
 /* ========================================
    END MOBILE FIXES
    ======================================== */
+
+/* ========================================
+   MODAL POPUP STYLES
+   ======================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    animation: slideIn 0.4s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: var(--accent);
+}
+
+.modal-body {
+    padding: 30px 40px 40px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.modal-body h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.modal-body h3 {
+    color: var(--secondary);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-body p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.modal-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-body ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.fee-table-modal {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.fee-table-modal th,
+.fee-table-modal td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.fee-table-modal th {
+    background: var(--gradient);
+    color: white;
+}
+
+.fee-table-modal .free {
+    color: var(--success);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.alumni-grid-modal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.alumni-item {
+    padding: 15px;
+    background: var(--light);
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.dresscode-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: var(--light);
+    border-radius: 8px;
+}
+
+.contact-info-modal {
+    line-height: 2;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+    background: #20BA5A;
+}
+
+.star-badge {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-body h2 {
+        font-size: 1.5rem;
+    }
+    
+    .alumni-grid-modal {
+        grid-template-columns: 1fr;
+    }
+    
+    .fee-table-modal th,
+    .fee-table-modal td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   END MODAL STYLES
+   ======================================== */
+
+/* ========================================
+   PROGRAM ICONS SMALLER
+   ======================================== */
+
+.program-icon-spa {
+    font-size: 2.5rem !important;
+    margin-bottom: 12px;
+}
+
+/* ========================================
+   MOBILE HERO POSITION FIX
+   ======================================== */
+
+@media (max-width: 768px) {
+    .slide-content {
+        padding-top: 10vh !important;
+    }
+    
+    .hero-slider {
+        min-height: 65vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-content {
+        padding-top: 8vh !important;
+    }
+}
+
+/* ========================================
+   BEAUTIFUL QUICK LINKS FOOTER
+   ======================================== */
+
+.footer-col h4 {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-col h4:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.footer-col ul li a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px 0;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    color: var(--white);
+}
+
+.footer-col ul li a:hover {
+    background: var(--accent);
+    transform: translateX(5px);
+    padding-left: 20px;
+}
+
+/* ========================================
+   END ADDITIONS
+   ======================================== */
+
+/* ========================================
+   DIFFERENT HERO SLIDE BACKGROUNDS
+   ======================================== */
+
+/* Slide 1 - EVENING COACHING - Keep user's image */
+.slide:nth-child(1) {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Slide 2 - Quality Education - Blue gradient with pattern */
+.slide:nth-child(2) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+.slide:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    opacity: 0.5;
+}
+
+/* Slide 3 - Qualified Faculty - Green gradient with pattern */
+.slide:nth-child(3) {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    position: relative;
+}
+
+.slide:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255,255,255,0.15) 0%, transparent 50%);
+    opacity: 0.6;
+}
+
+/* Ensure content is above patterns */
+.slide .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================================
+   END HERO BACKGROUNDS
+   ======================================== */
